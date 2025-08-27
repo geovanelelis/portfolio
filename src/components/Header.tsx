@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation'
 export default function Header() {
   const [isScrolling, setIsScrolling] = useState(false)
   const [activeSection, setActiveSection] = useState<string>(window.location.hash)
-  const [activeIdioma, setActiveIdioma] = useState(false)
+  const [activeIdiomaModal, setActiveIdiomaModal] = useState(false)
   const [country, setCountry] = useState('')
 
   const t = useTranslations('nav')
@@ -42,22 +42,22 @@ export default function Header() {
 
   const selectCountry = (lang: string) => {
     setCountry(lang)
-    setActiveIdioma(false)
+    setActiveIdiomaModal(false)
     router.push(`/${lang}`)
   }
 
   return (
     <div
-      className={`justify-center mx-auto mt-5 border-primary-800 rounded-xl ${
+      className={`justify-center mx-auto mt-5 border-primary-800 bg-primary-950/50 backdrop-blur-lg rounded-xl ${
         isScrolling
-          ? 'w-[80%] lg:w-[50%] fixed left-0 mt-6 right-0 top-0 border py-3 px-4'
-          : 'w-full py-3 px-12'
+          ? 'w-[80%] lg:w-[50%] fixed z-50 left-0 mt-6 right-0 top-0 border py-3 px-4'
+          : 'w-full py-3 px-12 relative z-50'
       } transition-all duration-400`}
     >
       <div className="w-full flex items-center justify-between font-primary">
         <a href="/">
           <div className="flex title justify-center items-center gap-3 cursor-pointer group">
-            <Image src={'logo-icon.svg'} width={30} height={30} alt="Logo" />
+            <Image src={'/logo-icon.svg'} width={30} height={30} alt="Logo" />
             <h1
               className={`font-logo sm:absolute text-primary-100 text-2xl sm:translate-y-2 sm:opacity-0 sm:group-hover:opacity-100  group-hover:translate-y-0 ${
                 isScrolling ? 'left-15' : 'left-22'
@@ -90,7 +90,7 @@ export default function Header() {
         <div>
           <div
             className="group flex items-center gap-2 px-4 py-2 border rounded-full border-primary-600 hover:bg-primary-50 cursor-pointer transition-all duration-300"
-            onClick={() => setActiveIdioma(!activeIdioma)}
+            onClick={() => setActiveIdiomaModal(!activeIdiomaModal)}
           >
             <div className="flex flex-col w-5 h-5 object-cover overflow-hidden">
               {locale === 'en' ? (
@@ -111,14 +111,14 @@ export default function Header() {
                 />
               )}
             </div>
-            {activeIdioma ? (
+            {activeIdiomaModal ? (
               <FaAngleUp className="size-3 group-hover:text-blue-600 transition-colors duration-300" />
             ) : (
               <FaAngleDown className="size-3 group-hover:text-blue-600 transition-colors duration-300" />
             )}
           </div>
 
-          {activeIdioma && (
+          {activeIdiomaModal && (
             <div className="absolute mt-2 text-primary-950 text-xs bg-primary-50 border border-primary-950 rounded-xl p-1">
               <ul className="flex flex-col">
                 <li

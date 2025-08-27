@@ -4,5 +4,16 @@
     "portfolio": "PORTFÓLIO",
     "about": "SOBRE",
     "contact": "CONTATO"
+  },
+
+  "profileCard": {
+    "saudation": "olá",
+    "presentation": "eu sou",
+    "tag": "Desenvolvedor Full Stack",
+    "phoneTitle": "TELEFONE",
+    "birthdayTitle": "DATA DE NASCIMENTO",
+    "birthdayContent": "16 de Junho, 2003",
+    "locationTitle": "LOCALIZAÇÃO",
+    "locationContent": "Ribeirão das Neves, Minas Gerais, Brasil"
   }
 }

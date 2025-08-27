@@ -4,5 +4,16 @@
     "portfolio": "PORTFOLIO",
     "about": "ABOUT",
     "contact": "CONTACT"
+  },
+
+  "profileCard": {
+    "saudation": "hey",
+    "presentation": "I'm",
+    "tag": "Full Stack Developer",
+    "phoneTitle": "PHONE",
+    "birthdayTitle": "BIRTHDAY",
+    "birthdayContent": "June 16, 2003",
+    "locationTitle": "LOCATION",
+    "locationContent": "Ribeirão das Neves, Minas Gerais, Brazil"
   }
 }
