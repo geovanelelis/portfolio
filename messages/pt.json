@@ -7,7 +7,7 @@
   },
 
   "profileCard": {
-    "saudation": "olá",
+    "saudation": "oi",
     "presentation": "eu sou",
     "tag": "Desenvolvedor Full Stack",
     "phoneTitle": "TELEFONE",
@@ -15,5 +15,12 @@
     "birthdayContent": "16 de Junho, 2003",
     "locationTitle": "LOCALIZAÇÃO",
     "locationContent": "Ribeirão das Neves, Minas Gerais, Brasil"
+  },
+
+  "heroSection": {
+    "saudation": "OI",
+    "presentation": "EU SOU",
+    "title": "Dev Estratégico & Criador de Experiências Digitais",
+    "buttonAction": "MEUS SERVIÇOS"
   }
 }

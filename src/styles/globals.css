@@ -1,10 +1,7 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
-
-@custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-*: initial;
+  /* --color-*: initial; */
 
   --color-blue-50: #f2f8fd;
   --color-blue-100: #e3effb;
@@ -13,10 +10,10 @@
   --color-blue-400: #4babe5;
   --color-blue-500: #2490d3;
   --color-blue-600: #1673b3;
-  --color-blue-700: #135b91;
-  --color-blue-800: #144e78;
-  --color-blue-900: #164164;
-  --color-blue-950: #0f2a42;
+  --color-blue-700: #0b59a2;
+  --color-blue-800: #0d487f;
+  --color-blue-900: #113d69;
+  --color-blue-950: #0d243f;
 
   --color-white: #f7f7f8;
 

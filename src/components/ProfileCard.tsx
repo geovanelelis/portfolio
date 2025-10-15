@@ -15,7 +15,7 @@ export default function ProfileCard() {
 
   return (
     <div className="w-full flex items-center justify-center relative mt-6 font-primary text-primary-200">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 max-w-[350px] pt-30 pb-8 px-8 flex flex-col items-center gap-8 bg-gradient-to-br from-primary-900 border border-primary-800 rounded-3xl z-0">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 max-w-[340px] pt-30 pb-8 px-10 flex flex-col items-center gap-8 bg-gradient-to-br from-primary-900 border border-primary-800 rounded-3xl z-0">
         <div className="flex flex-col items-center gap-3">
           <h1 className="flex gap-2 items-start">
             <span className="text-blue-400 text-xs text-right flex flex-col leading-1">
@@ -39,7 +39,7 @@ export default function ProfileCard() {
             <h2 className="flex flex-col">
               <span className="text-xs text-primary-400">EMAIL</span>
               <a href="mailto:geovanelelisds@gmail.com">
-                <span>geovanelelisds@gmail.com</span>
+                <span className="text-sm">geovanelelisds@gmail.com</span>
               </a>
             </h2>
           </div>
@@ -50,7 +50,7 @@ export default function ProfileCard() {
             <h2 className="flex flex-col">
               <span className="text-xs text-primary-400 ">{t('phoneTitle')}</span>
               <a href="tel:+5531986678504">
-                <span>+55 (31) 9 8667-8504</span>
+                <span className="text-sm">+55 (31) 9 8667-8504</span>
               </a>
             </h2>
           </div>
@@ -60,7 +60,7 @@ export default function ProfileCard() {
             </span>
             <h2 className="flex flex-col">
               <span className="text-xs text-primary-400">{t('birthdayTitle')}</span>
-              <span>{t('birthdayContent')}</span>
+              <span className="text-sm">{t('birthdayContent')}</span>
             </h2>
           </div>
           <div className="flex gap-4 items-center">
@@ -69,7 +69,7 @@ export default function ProfileCard() {
             </span>
             <h2 className="flex flex-col">
               <span className="text-xs text-primary-400">{t('locationTitle')}</span>
-              <span className="">{t('locationContent')}</span>
+              <span className="text-sm">{t('locationContent')}</span>
             </h2>
           </div>
         </div>
@@ -88,9 +88,14 @@ export default function ProfileCard() {
       </div>
 
       {/* FOTO PRINCIPAL */}
-      <div className="relative z-10 flex flex-col items-center w-[200px]">
-        <div className="w-full px-2 pt-4 overflow-hidden bg-gradient-to-tl from-blue-950 to-blue-700 rounded-4xl mt-0 border-10 border-primary-950">
-          <Image src={'/foto.png'} alt="foto de Geovane Lelis" width={1000} height={1000} />
+      <div className="relative z-10 flex flex-col items-center w-[200px] h-[200px]">
+        <div className="w-full flex items-center  overflow-hidden rounded-4xl mt-0 border-10 border-primary-950">
+          <Image
+            src={'/profile-photo.png'}
+            alt="foto de Geovane Lelis"
+            width={1000}
+            height={1000}
+          />
         </div>
       </div>
     </div>

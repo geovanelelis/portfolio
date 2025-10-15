@@ -24,6 +24,8 @@ export default function Header() {
   ]
 
   useEffect(() => {
+    setActiveSection(window.location.hash)
+
     function handleScroll() {
       if (window.scrollY > 0) {
         setIsScrolling(true)
@@ -32,26 +34,30 @@ export default function Header() {
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
-  }, [])
-
-  useEffect(() => {
     const handleHashChange = () => setActiveSection(location.hash)
+
+    window.addEventListener('scroll', handleScroll)
+
     window.addEventListener('hashchange', handleHashChange)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('hashchange', handleHashChange)
+    }
   }, [])
 
   const selectCountry = (lang: string) => {
     setCountry(lang)
     setActiveIdiomaModal(false)
-    router.push(`/${lang}`)
+    lang === 'pt' ? router.push('/') : router.push(`/${lang}`)
   }
 
   return (
     <div
-      className={`justify-center mx-auto mt-5 border-primary-800 bg-primary-950/50 backdrop-blur-lg rounded-xl ${
+      className={`justify-center mx-auto mt-5 border-primary-800 bg-primary-950/50 backdrop-blur-lg rounded-2xl ${
         isScrolling
-          ? 'w-[80%] lg:w-[50%] fixed z-50 left-0 mt-6 right-0 top-0 border py-3 px-4'
-          : 'w-full py-3 px-12 relative z-50'
+          ? 'w-[85%] lg:w-[50%] fixed z-50 left-0 mt-6 right-0 top-0 border py-3 px-4'
+          : 'w-full py-3 lg:px-12 px-6 relative z-50'
       } transition-all duration-400`}
     >
       <div className="w-full flex items-center justify-between font-primary">

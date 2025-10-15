@@ -15,5 +15,11 @@
     "birthdayContent": "June 16, 2003",
     "locationTitle": "LOCATION",
     "locationContent": "Ribeirão das Neves, Minas Gerais, Brazil"
+  }, 
+  "heroSection": {
+    "saudation": "HEY",
+    "presentation": "I'M",
+    "title": "Strategic Developer & Creator of Digital Experiences",
+    "buttonAction": "MY SERVICES"
   }
 }
