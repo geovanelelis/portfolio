@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react'
+import { HTMLAttributes, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 interface ButtonProps extends HTMLAttributes<HTMLElement> {
@@ -8,21 +8,35 @@ interface ButtonProps extends HTMLAttributes<HTMLElement> {
   icon?: React.ReactNode
 }
 
-export default function Button({ text, icon, ...rest }: ButtonProps) {
+export default function Button({ text, icon, onClick, ...rest }: ButtonProps) {
+  const [isPressed, setIsPressed] = useState(false)
+
   return (
-    <div className="group flex w-fit">
+    <div
+      className="group relative w-fit"
+      onMouseDown={() => setIsPressed(true)}
+      onMouseUp={() => setIsPressed(false)}
+      onMouseLeave={() => setIsPressed(false)}
+    >
       <button
         {...rest}
+        onClick={onClick}
         className={twMerge(
-          'px-6 py-4 ml-1.5 mt-1.5 bg-primary-950 text-primary-50 rounded-xl border-2 border-primary-100 w-fit text-sm font-bold cursor-pointer  group-hover:bg-primary-900 group-hover:mt-0 group-hover:ml-0 transition-all duration-300 flex items-center gap-3 absolute z-10',
+          'relative px-6 py-3 bg-primary-950 text-primary-50 rounded-xl border-2 transition-all duration-200 ease-in-out flex items-center gap-2 text-base font-semibold cursor-pointer font-sans',
+          'border-primary-100',
+          isPressed && 'border-blue-400',
+          'group-hover:translate-y-1 active:translate-y-1',
           rest.className
         )}
       >
         {text} {icon}
       </button>
+
       <div
-        {...rest}
-        className="px-6 py-4 bg-primary-100 text-transparent text-sm font-bold rounded-xl border-2 border-primary-100 w-fit absdolute -z-0 group-hover:py-4.5 group-hover:transition-all group-hover:duration-300 flex items-center gap-3"
+        className={twMerge(
+          'absolute inset-0 px-6 py-3 translate-y-2 text-transparent rounded-xl border-2 flex items-center gap-2 text-base font-semibold font-sans -z-10 transition-transform duration-200 ease-in-out group-hover:shadow-lg',
+          isPressed ? 'border-blue-400 bg-blue-400' : 'border-primary-100 bg-primary-100'
+        )}
       >
         {text} {icon}
       </div>

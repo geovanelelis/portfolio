@@ -30,9 +30,9 @@
   --color-primary-950: #131316;
 
   --font-primary: var(--font-sansation);
-  --font-heading: var(--font-museomoderno);
-  --font-sans: var(--font-poppins);
+  --font-heading: var(--font-anybody);
   --font-logo: var(--font-odor-mean-chey);
+  --font-sans: var(--font-mohave);
 }
 
 ::-webkit-scrollbar {

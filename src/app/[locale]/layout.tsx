@@ -1,23 +1,16 @@
 // 'use client'
 
 import type { Metadata } from 'next'
-import { MuseoModerno, Odor_Mean_Chey, Poppins, Sansation } from 'next/font/google'
+import {
+  Anybody,
+  Mohave,
+  Odor_Mean_Chey,
+  Sansation,
+} from 'next/font/google'
 import '@/styles/globals.css'
 import Header from '@/components/Header'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
-
-const poppins = Poppins({
-  variable: '--font-poppins',
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-})
-
-const museomoderno = MuseoModerno({
-  variable: '--font-museomoderno',
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-})
 
 const sansation = Sansation({
   variable: '--font-sansation',
@@ -25,7 +18,19 @@ const sansation = Sansation({
   weight: ['300', '400', '700'],
 })
 
-const odormeanchey = Odor_Mean_Chey({
+const anybody = Anybody({
+  variable: '--font-anybody',
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+})
+
+const mohave = Mohave({
+  variable: '--font-mohave',
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+})
+
+const odorMeanChey = Odor_Mean_Chey({
   variable: '--font-odor-mean-chey',
   subsets: ['latin'],
   weight: ['400'],
@@ -48,7 +53,7 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      className={`${poppins.variable} ${museomoderno.variable} ${sansation.variable} ${odormeanchey.variable} antialiased`}
+      className={`${mohave.variable} ${anybody.variable} ${sansation.variable} ${odorMeanChey.variable} antialiased`}
     >
       <body className="bg-primary-950 text-white">
         <NextIntlClientProvider locale={locale} messages={messages}>

@@ -54,10 +54,10 @@ export default function Header() {
 
   return (
     <div
-      className={`justify-center mx-auto mt-5 border-primary-800 bg-primary-950/50 backdrop-blur-lg rounded-2xl ${
+      className={`absolute left-0 right-0 justify-center mx-auto mt-5 border-primary-800 bg-primary-950/50 backdrop-blur-lg rounded-2xl ${
         isScrolling
-          ? 'w-[85%] lg:w-[50%] fixed z-50 left-0 mt-6 right-0 top-0 border py-3 px-4'
-          : 'w-full py-3 lg:px-12 px-6 relative z-50'
+          ? 'w-[85%] lg:w-[1000px] fixed z-50 mt-6 top-0 border py-3 px-4'
+          : 'w-full py-3 lg:px-12 px-6 z-50'
       } transition-all duration-400`}
     >
       <div className="w-full flex items-center justify-between font-primary">
